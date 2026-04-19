@@ -16,11 +16,22 @@ if (isset($_POST['register'])) {
     // Check if email already exists
     $checkEmail = $conn->query("SELECT email FROM users WHERE email = '$email'");
 
-    if ($checkEmail->num_rows > 0) {
-        $_SESSION['register_error'] = 'Email is already registered!';
+    // Check if username already exists
+    $checkUsername = $conn->query("SELECT username FROM users WHERE username = '$username'");
+
+    if ($checkEmail->num_rows > 0 || $checkUsername->num_rows > 0) {
+
+        if ($checkEmail->num_rows > 0 && $checkUsername->num_rows > 0) {
+            $_SESSION['register_error'] = 'Email and Username are already taken!';
+        } elseif ($checkEmail->num_rows > 0) {
+            $_SESSION['register_error'] = 'Email is already registered!';
+        } elseif ($checkUsername->num_rows > 0) {
+            $_SESSION['register_error'] = 'Username is already taken!';
+        }
+
         $_SESSION['active_form'] = 'register';
     } else {
-        // FIXED: Correct SQL syntax
+
         $conn->query("
             INSERT INTO users (firstname, lastname, username, email, password_hash)
             VALUES ('$firstname', '$lastname', '$username', '$email', '$password')
@@ -41,17 +52,14 @@ if (isset($_POST['login'])) {
     $email    = $conn->real_escape_string($_POST['email']);
     $password = $_POST['password'];
 
-    // FIXED: Missing column name
     $result = $conn->query("SELECT * FROM users WHERE email = '$email'");
 
     if ($result->num_rows === 1) {
 
         $user = $result->fetch_assoc();
 
-        // FIXED: Correct password column name
         if (password_verify($password, $user['password_hash'])) {
 
-            // FIXED: Correct superglobal name
             $_SESSION['username'] = $user['username'];
             $_SESSION['email']    = $user['email'];
             $_SESSION['user_id']  = $user['user_id'];
@@ -59,16 +67,16 @@ if (isset($_POST['login'])) {
 
             header("Location: /TicTacToe-Hub/index.php");
             exit();
-
         } else {
             $_SESSION['login_error'] = "Incorrect password!";
+            $_SESSION['old_email'] = $email;
         }
-
     } else {
         $_SESSION['login_error'] = "Email not found!";
+        $_SESSION['old_email'] = $email;
     }
 
-    header("Location: index.php");
+
+    header("Location: login.php");
     exit();
 }
-?>

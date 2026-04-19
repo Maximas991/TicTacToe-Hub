@@ -1,8 +1,10 @@
-/* LOGIN PAGE */
+/* =========================================================
+   LOGIN PAGE LAYOUT
+   ========================================================= */
 .login-container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the login card horizontally */
 }
 
 .login-card {
@@ -24,7 +26,10 @@
     color: #222;
 }
 
-/* INPUT FIELDS */
+
+/* =========================================================
+   INPUT FIELDS (Email + Password)
+   ========================================================= */
 .input-group {
     text-align: left;
     margin-bottom: 20px;
@@ -52,7 +57,10 @@
     outline: none;
 }
 
-/* LOGIN BUTTON */
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
 .login-btn {
     width: 100%;
     margin-top: 10px;
@@ -61,7 +69,10 @@
     border-radius: 10px;
 }
 
-/* REGISTER LINK */
+
+/* =========================================================
+   REGISTER LINK
+   ========================================================= */
 .register-link {
     margin-top: 20px;
     font-size: 14px;
@@ -74,5 +85,111 @@
 }
 
 .register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   ERROR + SUCCESS MESSAGES
+   ========================================================= */
+.error-msg {
+    background: #ff4d4d;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.success-msg {
+    background: #4dff88;
+    color: #222;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+
+/* =========================================================
+   PASSWORD FIELD + EYE ICON TOGGLE
+   ========================================================= */
+
+/* Wrapper to position the icon inside the input */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center; /* Vertically center the icon */
+}
+
+/* Add space on the right for the icon */
+.password-wrapper input {
+    width: 100%;
+    padding-right: 50px;
+}
+
+/* Eye icons (open + closed) */
+.password-toggle-icon {
+    position: absolute;
+    right: 12px; /* Distance from right edge */
+    top: 50%;
+    transform: translateY(-50%); /* Perfect vertical centering */
+
+    width: 28px;   /* Icon size */
+    height: 28px;
+
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.password-toggle-icon:hover {
+    opacity: 1;
+}
+
+/* Hide the inactive icon */
+.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   OLD BUTTON VERSION (no longer used)
+   ========================================================= */
+.show-pass-btn {
+    padding: 6px 12px;
+    background: #00c3ff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #222;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.show-pass-btn:hover {
+    background: white;
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD LINK
+   ========================================================= */
+.forgot-pass {
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.forgot-pass a {
+    color: #00c3ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-pass a:hover {
     text-decoration: underline;
 }
