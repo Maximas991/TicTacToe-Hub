@@ -1,14 +1,22 @@
+/* =========================================================
+   FOOTER WRAPPER (Outer Container)
+   ========================================================= */
 footer {
     width: 100%;
     margin-top: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* FOOTER WRAPPER */
+/* =========================================================
+   FOOTER INNER SECTION (Rounded Bubble)
+   ========================================================= */
 .footer_section {
-    width: 90%;
-    max-width: 1400px;
+    width: 95%;
+    max-width: 1700px;
 
-    margin: 0 auto;
     padding: 40px;
 
     background: #222;
@@ -18,25 +26,34 @@ footer {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* TOP GRID */
+/* =========================================================
+   TOP GRID LAYOUT
+   ========================================================= */
 .footer_top {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr 1fr 2fr;
     gap: 40px;
     margin-bottom: 40px;
 }
 
-/* ABOUT SECTION */
+/* =========================================================
+   ABOUT SECTION (Logo + Text + Social Icons)
+   ========================================================= */
 .footer_about p {
     font-size: 14px;
     margin: 15px 0;
     line-height: 1.5;
 }
 
+/* Logo Row */
 .footer_logo {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.footer_logo h1 {
+    font-size: large;
 }
 
 .footer_logo img {
@@ -45,6 +62,7 @@ footer {
     border-radius: 6px;
 }
 
+/* Social Icons */
 .footer_socials {
     display: flex;
     gap: 10px;
@@ -62,7 +80,9 @@ footer {
     opacity: 1;
 }
 
-/* COLUMNS */
+/* =========================================================
+   FOOTER COLUMNS (Company, Developers, Communities, Contact)
+   ========================================================= */
 .footer_col h1 {
     font-size: 18px;
     margin-bottom: 10px;
@@ -81,7 +101,9 @@ footer {
     color: #00c3ff;
 }
 
-/* BOTTOM SECTION */
+/* =========================================================
+   BOTTOM FOOTER BAR (Legal Links + Copyright)
+   ========================================================= */
 .footer_bottom {
     border-top: 1px solid #444;
     padding-top: 20px;
@@ -109,7 +131,9 @@ footer {
     color: #00c3ff;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE BEHAVIOR
+   ========================================================= */
 @media (max-width: 900px) {
     .footer_top {
         grid-template-columns: 1fr 1fr;

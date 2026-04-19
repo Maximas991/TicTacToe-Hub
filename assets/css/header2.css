@@ -1,7 +1,7 @@
 /* =========================================================
    HEADER WRAPPER (Floating Header Bubble)
    ========================================================= */
-header {
+.floating-header {
     position: fixed;
     top: 20px;
     left: 50%;
@@ -19,18 +19,15 @@ header {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 
     z-index: 1000;
-
 }
 
-
 /* =========================================================
-   HEADER LAYOUT (Logo + Nav + Hamburger)
+   HEADER LAYOUT (Logo + Nav + Hamburger + Profile)
    ========================================================= */
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
 }
 
 .logo {
@@ -42,25 +39,68 @@ header {
 /* =========================================================
    DESKTOP NAVIGATION
    ========================================================= */
-nav ul {
+.desktop-nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
+    align-items: center;
 }
 
-nav ul li a {
+.desktop-nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
     transition: 0.2s;
 }
 
-nav ul li a:hover {
+.desktop-nav ul li a:hover {
     color: #00c3ff;
 }
 
+.nav-right-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logout-btn {
+    color: red;
+    gap: 0;
+}
+
+#logout-btn a {
+    color: red;
+}
+
+#logout-btn a:hover {
+    color: white;
+    margin-left: 0;
+}
+
 /* =========================================================
-   HAMBURGER TOGGLE (Checkbox Hack)
+   PROFILE IMAGE (Auto-cropped Circle)
+   ========================================================= */
+.profile-img {
+    width: 40px;
+    height: auto;
+
+    border-radius: 50%;        /* perfect circle */
+    object-fit: cover;         /* auto-crop */
+    object-position: center;   /* center crop */
+
+    border: 2px solid #00c3ff;
+    cursor: pointer;
+
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* =========================================================
+   HAMBURGER MENU (Mobile Only)
    ========================================================= */
 .menu-toggle {
     display: none;
@@ -83,25 +123,15 @@ nav ul li a:hover {
     transition: opacity .2s ease;
 }
 
-/* Icon swap: hamburger → close */
-.icon-ham {
-    opacity: 1;
-}
+/* Icon swap */
+.icon-ham { opacity: 1; }
+.icon-close { opacity: 0; }
 
-.icon-close {
-    opacity: 0;
-}
-
-.menu-toggle:checked ~ .hamburger .icon-ham {
-    opacity: 0;
-}
-
-.menu-toggle:checked ~ .hamburger .icon-close {
-    opacity: 1;
-}
+.menu-toggle:checked ~ .hamburger .icon-ham { opacity: 0; }
+.menu-toggle:checked ~ .hamburger .icon-close { opacity: 1; }
 
 /* =========================================================
-   MOBILE OFF-SCREEN MENU (Fade + Scale Animation)
+   OFF-SCREEN MENU (Mobile Navigation)
    ========================================================= */
 .off-screen-menu {
     position: fixed;
@@ -115,41 +145,30 @@ nav ul li a:hover {
     background: #222;
     border-radius: 25px;
 
-    /* Animation */
     opacity: 0;
     transform: scale(0.7);
     transform-origin: top right;
     pointer-events: none;
+
     transition: opacity .35s ease, transform .35s ease;
 }
 
-/* When menu is opened */
 .menu-toggle:checked ~ .off-screen-menu {
     opacity: 1;
     transform: scale(1);
     pointer-events: auto;
 }
 
-/* =========================================================
-   MOBILE MENU LIST STYLING
-   ========================================================= */
+/* Off-screen menu list */
 .off-screen-menu ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     gap: 20px;
-
     padding: 0;
-    margin: 0;
-    width: 100%;
-
-    padding-left: 40px;
-    margin-top: 60px;
-}
-
-.off-screen-menu ul li {
-    width: 100%;
+    margin: 60px 0 0 40px;
 }
 
 .off-screen-menu ul li a {
@@ -171,14 +190,7 @@ nav ul li a:hover {
 }
 
 /* =========================================================
-   GLOBAL LIST RESET (Safety)
-   ========================================================= */
-div ul li {
-    list-style: none;
-}
-
-/* =========================================================
-   RESPONSIVE BEHAVIOR (Mobile)
+   RESPONSIVE BEHAVIOR
    ========================================================= */
 @media (max-width: 600px) {
     .desktop-nav {
