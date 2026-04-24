@@ -37,8 +37,17 @@ Designed as a clean, interactive project for learning, practicing, and showcasin
 TicTacToe-Hub/
 │
 ├── assets/
-|   ├── css/
-|   ├── fonts/
+│   ├── css/
+│   │   ├── footer.css
+│   │   ├── header.css
+│   │   ├── header2.css
+│   │   ├── leaderboard.css
+│   │   ├── log-reg.css
+│   │   ├── main.css
+│   │   ├── play.css
+│   │   ├── profile.css
+│   │   └── style.css
+│   ├── fonts/
 │   ├── img/
 │   └── js/
 │
@@ -97,7 +106,7 @@ http://localhost/TicTacToe-Hub/
 
 ---
 
-## 📸 Screenshots (Optional)
+## 📸 Screenshots
 
 ```markdown
 ![Homepage](assets/img/screenshots/home.png)
@@ -121,5 +130,5 @@ This project is open-source and available under the [MIT License](LICENSE).
 
 ## 💬 Author
 
-**Mike (Maximas991)**  
+**Monkey D. Linn (Maximas991)**  
 A motivated IT student building clean, modern web projects.
