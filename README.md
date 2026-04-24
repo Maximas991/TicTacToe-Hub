@@ -37,19 +37,25 @@ Designed as a clean, interactive project for learning, practicing, and showcasin
 TicTacToe-Hub/
 │
 ├── assets/
+|   ├── css/
+|   ├── fonts/
 │   ├── img/
-│   └── nav-icons/
+│   └── js/
 │
 ├── data/
 │
 ├── inc/
-│   └── header.php
+│   ├── inc_config.php
+│   ├── inc_log-reg.php
+│   ├── inc_modules.php
+│   └── inc_temporary.php
 │
 ├── pages/
-│   ├── play.php
 │   ├── leaderboard.php
 │   ├── login.php
-│   └── profile.php
+│   ├── logout.php
+│   ├── profile.php
+│   └── register.php
 │
 └── index.php
 ```
