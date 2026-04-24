@@ -48,7 +48,7 @@ makeHeader();
             <!-- =========================================================
                  LOGIN FORM
                  ========================================================= -->
-            <form action="/TicTacToe-Hub/pages/login_register.php" method="POST">
+            <form action="/TicTacToe-Hub/inc/inc_log-reg.php" method="POST">
 
                 <!-- Email Input -->
                 <div class="input-group">

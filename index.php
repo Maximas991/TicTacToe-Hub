@@ -1,7 +1,10 @@
 <?php
+/* =========================================================
+   SESSION + MODULES
+   ========================================================= */
+session_start();
 include("./inc/inc_modules.php");
 
-session_start();
 
 if (isset($_SESSION['user_id'])) {
     $title = "Welcome back, " . htmlspecialchars($_SESSION['username'])."!";
@@ -48,6 +51,13 @@ if (isset($_SESSION['user_id'])) {
 
     <?php endif; ?>
 </main>
+
+<?php startScript();
+    
+?>
+
+<?php closeScript();?>
+
 
 <?php
 makeFooter();

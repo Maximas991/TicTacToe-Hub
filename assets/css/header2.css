@@ -28,12 +28,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 50px;
 }
 
 .logo {
+  transition: 
+    transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    box-shadow 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    filter 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.logo:hover {
+  transform: scale(1.02);
+  filter: brightness(1.2);
+}
+
+.logo a{
+    text-decoration: none;
+}
+
+.logo-text {
     font-size: 26px;
     font-weight: bold;
     letter-spacing: 1px;
+    color: white;
+    transform: 1.2;
 }
 
 /* =========================================================
@@ -128,7 +146,7 @@
 .icon-close { opacity: 0; }
 
 .menu-toggle:checked ~ .hamburger .icon-ham { opacity: 0; }
-.menu-toggle:checked ~ .hamburger .icon-close { opacity: 1; }
+.menu-toggle:checked ~ .hamburger .icon-close { opacity: 1;}
 
 /* =========================================================
    OFF-SCREEN MENU (Mobile Navigation)
@@ -192,7 +210,7 @@
 /* =========================================================
    RESPONSIVE BEHAVIOR
    ========================================================= */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .desktop-nav {
         display: none;
     }

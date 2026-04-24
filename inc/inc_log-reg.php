@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../inc/inc_config.php';
+require_once '../data/db_connect.php';
 
 /* =========================================================
    REGISTER USER
@@ -30,6 +30,9 @@ if (isset($_POST['register'])) {
         }
 
         $_SESSION['active_form'] = 'register';
+
+        header("Location: /TicTacToe-Hub/pages/register.php");
+        exit();
     } else {
 
         $conn->query("
@@ -40,7 +43,7 @@ if (isset($_POST['register'])) {
         $_SESSION['register_success'] = 'Account created successfully!';
     }
 
-    header("Location: login.php");
+    header("Location: /TicTacToe-Hub/pages/login.php");
     exit();
 }
 
@@ -77,6 +80,6 @@ if (isset($_POST['login'])) {
     }
 
 
-    header("Location: login.php");
+    header("Location: /TicTacToe-Hub/pages/login.php");
     exit();
 }

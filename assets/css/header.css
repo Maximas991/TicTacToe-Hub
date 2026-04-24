@@ -1,12 +1,11 @@
 /* =========================================================
-   HEADER WRAPPER (Floating Header Bubble)
+   1) FLOATING HEADER WRAPPER
    ========================================================= */
-header {
+.floating-header {
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-
     width: 95%;
     max-width: 1700px;
 
@@ -17,14 +16,11 @@ header {
     border-radius: 20px;
 
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-
     z-index: 1000;
-
 }
 
-
 /* =========================================================
-   HEADER LAYOUT (Logo + Nav + Hamburger)
+   2) HEADER LAYOUT (Logo + Nav + Hamburger)
    ========================================================= */
 .header-content {
     display: flex;
@@ -33,34 +29,79 @@ header {
     height: 50px;
 }
 
-.logo {
+/* =========================================================
+   3) LOGO
+   ========================================================= */
+.logo a {
+    text-decoration: none;
+    color: white;
     font-size: 26px;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
 /* =========================================================
-   DESKTOP NAVIGATION
+   4) DESKTOP NAVIGATION
    ========================================================= */
-nav ul {
+.desktop-nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
+    align-items: center;
 }
 
-nav ul li a {
+.desktop-nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
     transition: 0.2s;
 }
 
-nav ul li a:hover {
+.desktop-nav ul li a:hover {
     color: #00c3ff;
 }
 
+/* Right-side group (profile + logout) */
+.nav-right-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Logout button */
+#logout-btn a {
+    color: red;
+    transition: 0.2s;
+}
+
+#logout-btn a:hover {
+    color: white;
+}
+
 /* =========================================================
-   HAMBURGER TOGGLE (Checkbox Hack)
+   5) PROFILE IMAGE (Auto-cropped Circle)
+   ========================================================= */
+.profile-img {
+    width: 40px;
+    height: auto;
+
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+
+    border: 2px solid #00c3ff;
+    cursor: pointer;
+
+    transition: transform .2s ease, opacity .2s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* =========================================================
+   6) HAMBURGER MENU (Mobile Toggle)
    ========================================================= */
 .menu-toggle {
     display: none;
@@ -80,18 +121,14 @@ nav ul li a:hover {
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity .2s ease;
+    transition: opacity .25s ease;
 }
 
-/* Icon swap: hamburger → close */
-.icon-ham {
-    opacity: 1;
-}
+/* Icon swap */
+.icon-ham { opacity: 1; }
+.icon-close { opacity: 0; }
 
-.icon-close {
-    opacity: 0;
-}
-
+/* When menu is opened */
 .menu-toggle:checked ~ .hamburger .icon-ham {
     opacity: 0;
 }
@@ -100,8 +137,16 @@ nav ul li a:hover {
     opacity: 1;
 }
 
+/* Bring close icon above menu */
+.menu-toggle:checked ~ .hamburger {
+    position: fixed;
+    top: 25px;
+    right: 35px;
+    z-index: 2001;
+}
+
 /* =========================================================
-   MOBILE OFF-SCREEN MENU (Fade + Scale Animation)
+   7) MOBILE OFF-SCREEN MENU (Slide/Fade)
    ========================================================= */
 .off-screen-menu {
     position: fixed;
@@ -115,11 +160,11 @@ nav ul li a:hover {
     background: #222;
     border-radius: 25px;
 
-    /* Animation */
     opacity: 0;
     transform: scale(0.7);
     transform-origin: top right;
     pointer-events: none;
+
     transition: opacity .35s ease, transform .35s ease;
 }
 
@@ -131,7 +176,7 @@ nav ul li a:hover {
 }
 
 /* =========================================================
-   MOBILE MENU LIST STYLING
+   8) MOBILE MENU LIST
    ========================================================= */
 .off-screen-menu ul {
     list-style: none;
@@ -140,16 +185,8 @@ nav ul li a:hover {
     align-items: flex-start;
     gap: 20px;
 
-    padding: 0;
-    margin: 0;
-    width: 100%;
-
     padding-left: 40px;
-    margin-top: 60px;
-}
-
-.off-screen-menu ul li {
-    width: 100%;
+    margin: 60px 0 0 0;
 }
 
 .off-screen-menu ul li a {
@@ -171,16 +208,16 @@ nav ul li a:hover {
 }
 
 /* =========================================================
-   GLOBAL LIST RESET (Safety)
+   9) GLOBAL LIST RESET (Safety)
    ========================================================= */
 div ul li {
     list-style: none;
 }
 
 /* =========================================================
-   RESPONSIVE BEHAVIOR (Mobile)
+   10) RESPONSIVE BEHAVIOR (Mobile)
    ========================================================= */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .desktop-nav {
         display: none;
     }

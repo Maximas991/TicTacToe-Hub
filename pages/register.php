@@ -1,10 +1,19 @@
 <?php
-include("../inc/inc_modules.php");
+/* =========================================================
+   SESSION + MODULES
+   ========================================================= */
+session_start(); // Required to read/write session variables
+include("../inc/inc_modules.php"); // Loads your header, footer, etc.
 
+/* =========================================================
+   PAGE SETTINGS
+   ========================================================= */
 $title = "Register";
 $additionalcss1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/log-reg.css">';
 
-
+/* =========================================================
+   PAGE START
+   ========================================================= */
 makeHead($title, $additionalcss1);
 startBody();
 makeHeader();
@@ -15,7 +24,20 @@ makeHeader();
         <div class="login-card">
             <h1>Register</h1>
 
-            <form action="/TicTacToe-Hub/pages/login_register.php" method="POST">
+            <!-- =========================================================
+                 ERROR MESSAGE (email or username is already taken)
+                 ========================================================= -->
+            <?php if (isset($_SESSION['register_error'])): ?>
+                <div class="error-msg">
+                    <?= htmlspecialchars($_SESSION['register_error']); ?>
+                </div>
+                <?php unset($_SESSION['register_error']); ?>
+            <?php endif; ?>
+
+            <!-- =========================================================
+                 REGISTER FORM
+                 ========================================================= -->
+            <form action="/TicTacToe-Hub/inc/inc_log-reg.php" method="POST">
 
                 <div class="input-group">
                     <label for="firstname">First Name</label>
@@ -37,9 +59,23 @@ makeHeader();
                     <input type="email" id="email" name="email" required>
                 </div>
 
-                <div class="input-group">
+                <!-- Password Input + Eye Toggle -->
+                <div class="input-group password-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" required>
+
+                        <!-- Eye Open Icon -->
+                        <img src="/TicTacToe-Hub/assets/img/icons/eye-open.svg"
+                             id="eyeOpen"
+                             class="password-toggle-icon">
+
+                        <!-- Eye Closed Icon -->
+                        <img src="/TicTacToe-Hub/assets/img/icons/eye-closed.svg"
+                             id="eyeClosed"
+                             class="password-toggle-icon hidden">
+                    </div>
                 </div>
 
 
@@ -57,6 +93,35 @@ makeHeader();
 
 
 <?php
+/* =========================================================
+   FOOTER + END OF PAGE
+   ========================================================= */
 makeFooter();
+?>
+<script>
+    /* =========================================================
+       PASSWORD SHOW/HIDE TOGGLE (Eye Icons)
+       ========================================================= */
+    const passwordInput = document.getElementById("password");
+    const eyeOpen = document.getElementById("eyeOpen");
+    const eyeClosed = document.getElementById("eyeClosed");
+
+    // Toggle password visibility + swap icons
+    function togglePassword() {
+        const isHidden = passwordInput.type === "password";
+
+        // Switch input type
+        passwordInput.type = isHidden ? "text" : "password";
+
+        // Swap icons
+        eyeOpen.classList.toggle("hidden");
+        eyeClosed.classList.toggle("hidden");
+    }
+
+    // Add click events to both icons
+    eyeOpen.addEventListener("click", togglePassword);
+    eyeClosed.addEventListener("click", togglePassword);
+</script>
+<?php
 closeBody();
 ?>

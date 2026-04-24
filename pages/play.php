@@ -1,14 +1,23 @@
 <?php
+/* =========================================================
+   SESSION + MODULES
+   ========================================================= */
+session_start();
 include("../inc/inc_modules.php");
 
-$title = "Welcome to TicTacToe-Hub";
-$additionalcss1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/leaderboard.css">';
+$title = "Choose your game!";
+$additionalcss1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/play.css">';
 
 
 
 makeHead($title, $additionalcss1);
 startBody();
-makeHeader2();
+
+if (isset($_SESSION['user_id'])) {
+    makeHeader2($_SESSION['profile_img']);
+} else {
+    makeHeader();
+}
 ?>
 
 <main>

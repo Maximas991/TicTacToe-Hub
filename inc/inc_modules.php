@@ -11,7 +11,6 @@ function makeHead($title, $additionalcss1)
         <title>' . $title . '</title>
         <link rel="stylesheet" href="/TicTacToe-Hub/assets/css/main.css">
         <link rel="stylesheet" href="/TicTacToe-Hub/assets/css/header.css">
-        <link rel="stylesheet" href="/TicTacToe-Hub/assets/css/header2.css">
         <link rel="stylesheet" href="/TicTacToe-Hub/assets/css/footer.css">
         ' . $additionalcss1 . '
         <link rel="icon" type="image/png" href="/TicTacToe-Hub/assets/img/icons/icons8-tic-tac-toe-67.png">
@@ -24,34 +23,48 @@ function startBody()
     echo '<body>';
 }
 
+function closeBody()
+{
+    echo '
+    </body>
+    </html>
+    ';
+}
+
+
 function makeHeader()
 {
     echo '
     <header class="floating-header">
         <div class="header-content">
 
-            <div class="logo">TicTacToe-Hub</div>
-
-            <!-- Hidden checkbox toggle -->
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-
-            <!-- Off-screen Menu -->
-            <div class="off-screen-menu">
-                <ul>
-                    <li><a href="/TicTacToe-Hub/index.php">Home</a></li>
-                    <li><a href="/TicTacToe-Hub/pages/game/play.php">Play</a></li>
-                    <li><a href="/TicTacToe-Hub/pages/leaderboard.php">Leaderboard</a></li>
-                    <li><a href="/TicTacToe-Hub/pages/login.php">Login</a></li>
-                </ul>
+            <!-- LOGO -->
+            <div class="logo">
+                <a href="/TicTacToe-Hub/index.php">
+                    <span class="logo-text">TicTacToe-Hub</span>
+                </a>
             </div>
 
-            <!-- Hamburger / Close Icon -->
+            <!-- CHECKBOX (must come BEFORE hamburger) -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+            <!-- HAMBURGER BUTTON -->
             <label for="menu-toggle" class="hamburger">
                 <img class="icon-ham" src="/TicTacToe-Hub/assets/img/nav-icons/hamburger.svg" alt="Menu">
                 <img class="icon-close" src="/TicTacToe-Hub/assets/img/nav-icons/cross.svg" alt="Close">
             </label>
 
-            <!-- Desktop Navigation -->
+            <!-- MOBILE MENU -->
+            <div class="off-screen-menu">
+                <ul>
+                    <li><a href="/TicTacToe-Hub/index.php">Home</a></li>
+                    <li><a href="/TicTacToe-Hub/pages/play.php">Play</a></li>
+                    <li><a href="/TicTacToe-Hub/pages/leaderboard.php">Leaderboard</a></li>
+                    <li><a href="/TicTacToe-Hub/pages/login.php">Login</a></li>
+                </ul>
+            </div>
+
+            <!-- DESKTOP NAV -->
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="/TicTacToe-Hub/index.php">Home</a></li>
@@ -66,18 +79,31 @@ function makeHeader()
     ';
 }
 
+
+
 function makeHeader2()
 {
     echo
     '<header class="floating-header">
         <div class="header-content">
 
-            <div class="logo">TicTacToe-Hub</div>
+            <!-- LOGO -->
+            <div class="logo">
+                <a href="/TicTacToe-Hub/index.php">
+                    <span class="logo-text">TicTacToe-Hub</span>
+                </a>
+            </div>
 
-            <!-- Hidden checkbox toggle -->
+            <!-- CHECKBOX -->
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-            <!-- Off-screen Menu -->
+            <!-- HAMBURGER BUTTON -->
+            <label for="menu-toggle" class="hamburger">
+                <img class="icon-ham" src="/TicTacToe-Hub/assets/img/nav-icons/hamburger.svg" alt="Menu">
+                <img class="icon-close" src="/TicTacToe-Hub/assets/img/nav-icons/cross.svg" alt="Close">
+            </label>
+
+            <!-- Off-screen Menu MUST come after hamburger -->
             <div class="off-screen-menu">
                 <ul>
                     <li><a href="/TicTacToe-Hub/index.php">Home</a></li>
@@ -87,18 +113,12 @@ function makeHeader2()
                     <li><a href="/TicTacToe-Hub/pages/logout.php">Logout</a></li>
                 </ul>
             </div>
-
-            <!-- Hamburger / Close Icon -->
-            <label for="menu-toggle" class="hamburger">
-                <img class="icon-ham" src="/TicTacToe-Hub/assets/img/nav-icons/hamburger.svg" alt="Menu">
-                <img class="icon-close" src="/TicTacToe-Hub/assets/img/nav-icons/cross.svg" alt="Close">
-            </label>
-
+            
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
                 <ul>
                     <li><a href="/TicTacToe-Hub/index.php">Home</a></li>
-                    <li><a href="/TicTacToe-Hub/pages/.php">Play</a></li>
+                    <li><a href="/TicTacToe-Hub/pages/play.php">Play</a></li>
                     <li><a href="/TicTacToe-Hub/pages/leaderboard.php">Leaderboard</a></li>
 
                     <div class="nav-right-group">
@@ -119,10 +139,6 @@ function makeHeader2()
     </header>
     ';
 }
-
-
-
-
 
 function makeFooter()
 {
@@ -197,10 +213,41 @@ function makeFooter()
     ';
 }
 
-function closeBody()
+function startScript()
 {
+    echo '<script>';
+}
+
+function closeScript()
+{
+    echo '</script>';
+}
+
+function makeHeaderHamburgerMenuScript(){
     echo '
-    </body>
-    </html>
+    document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamIcon = document.querySelector(".ham-icon");
+        const closeIcon = document.querySelector(".close-icon");
+
+        let menuOpen = false;
+
+        hamburger.addEventListener("click", () => {
+            menuOpen = !menuOpen;
+
+            if (menuOpen) {
+                mobileMenu.style.right = "0";
+                hamIcon.style.opacity = "0";
+                closeIcon.style.opacity = "1";
+            } else {
+                mobileMenu.style.right = "-350px";
+                hamIcon.style.opacity = "1";
+                closeIcon.style.opacity = "0";
+            }
+        });
+    });
     ';
 }
+
+?>

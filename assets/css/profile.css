@@ -2,12 +2,6 @@
    PROFILE PAGE
    ========================================================= */
 
-.profile-container {
-    display: flex;
-    justify-content: center;
-    padding: 60px 20px;
-}
-
 .profile-card {
     background: #222;
     padding: 40px;
