@@ -7,8 +7,8 @@ require_once '../data/db_connect.php';
    ========================================================= */
 if (isset($_POST['register'])) {
 
-    $firstname = $conn->real_escape_string($_POST['firstname']);
-    $lastname  = $conn->real_escape_string($_POST['lastname']);
+    $first_name = $conn->real_escape_string($_POST['first_name']);
+    $last_name  = $conn->real_escape_string($_POST['last_name']);
     $username  = $conn->real_escape_string($_POST['username']);
     $email     = $conn->real_escape_string($_POST['email']);
     $password  = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -36,8 +36,8 @@ if (isset($_POST['register'])) {
     } else {
 
         $conn->query("
-            INSERT INTO users (firstname, lastname, username, email, password_hash)
-            VALUES ('$firstname', '$lastname', '$username', '$email', '$password')
+            INSERT INTO users (first_name, last_name, username, email, password_hash)
+            VALUES ('$first_name', '$last_name', '$username', '$email', '$password')
         ");
 
         $_SESSION['register_success'] = 'Account created successfully!';

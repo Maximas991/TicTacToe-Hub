@@ -9,12 +9,12 @@ include("../inc/inc_modules.php"); // Loads your header, footer, etc.
    PAGE SETTINGS
    ========================================================= */
 $title = "Login";
-$additionalcss1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/log-reg.css">';
+$additional_css_1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/log-reg.css">';
 
 /* =========================================================
    PAGE START
    ========================================================= */
-makeHead($title, $additionalcss1);
+makeHead($title, $additional_css_1);
 startBody();
 makeHeader();
 ?>

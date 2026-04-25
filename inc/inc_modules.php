@@ -1,6 +1,6 @@
 <?php
 
-function makeHead($title, $additionalcss1)
+function makeHead($title, $additional_css_1)
 {
     echo '
     <!DOCTYPE html>
@@ -12,7 +12,7 @@ function makeHead($title, $additionalcss1)
         <link rel="stylesheet" href="/TicTacToe-Hub/assets/css/main.css">
         <link rel="stylesheet" href="/TicTacToe-Hub/assets/css/header.css">
         <link rel="stylesheet" href="/TicTacToe-Hub/assets/css/footer.css">
-        ' . $additionalcss1 . '
+        ' . $additional_css_1 . '
         <link rel="icon" type="image/png" href="/TicTacToe-Hub/assets/img/icons/icons8-tic-tac-toe-67.png">
     </head>
     ';

@@ -13,17 +13,17 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $title = "Edit Profile";
-$additionalcss1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/edit-profile.css">';
+$additional_css_1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/edit-profile.css">';
 
 // Fetch user data
 $user_id = $_SESSION['user_id'];
-$stmt = $conn->prepare("SELECT firstname, lastname, username FROM users WHERE user_id = ?");
+$stmt = $conn->prepare("SELECT first_name, last_name, username FROM users WHERE user_id = ?");
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 
-makeHead($title, $additionalcss1);
+makeHead($title, $additional_css_1);
 startBody();
 makeHeader2($_SESSION['profile_img']);
 ?>
@@ -48,13 +48,13 @@ makeHeader2($_SESSION['profile_img']);
             </div>
 
             <label>First Name</label>
-            <input type="text" name="first_name" value="<?php echo htmlspecialchars($user['firstname']); ?>" required>
+            <input type="text" name="first_name" value="<?php echo htmlspecialchars($user['first_name']); ?>" required>
 
             <label>Last Name</label>
-            <input type="text" name="last_name" value="<?php echo htmlspecialchars($user['lastname']); ?>" required>
+            <input type="text" name="last_name" value="<?php echo htmlspecialchars($user['last_name']); ?>" required>
 
             <label>Username</label>
-            <input type="text" name="username" value="<?php echo htmlspecialchars($user['username']); ?>" required>
+            <input type="text" name="username" value="<?php echo htmlspecialchars($user['user_name']); ?>" required>
 
             <button type="submit" class="save-btn">Save Changes</button>
         </form>

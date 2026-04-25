@@ -6,11 +6,11 @@ session_start();
 include("../inc/inc_modules.php");
 
 $title = "Leaderboard";
-$additionalcss1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/leaderboard.css">';
+$additional_css_1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/leaderboard.css">';
 
 
 
-makeHead($title, $additionalcss1);
+makeHead($title, $additional_css_1);
 startBody();
 
 if (isset($_SESSION['user_id'])) {

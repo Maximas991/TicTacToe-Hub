@@ -14,14 +14,14 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $title = "Your Profile";
-$additionalcss1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/avatar.css">';
+$additional_css_1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/avatar.css">';
 
 // Fetch user data from database
 $user_id = $_SESSION['user_id'];
 $query = $conn->query("SELECT * FROM users WHERE user_id = $user_id");
 $user = $query->fetch_assoc();
 
-makeHead($title, $additionalcss1);
+makeHead($title, $additional_css_1);
 startBody();
 makeHeader2($_SESSION['profile_img']);
 ?>

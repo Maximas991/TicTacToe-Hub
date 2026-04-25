@@ -9,12 +9,12 @@ include("../inc/inc_modules.php"); // Loads your header, footer, etc.
    PAGE SETTINGS
    ========================================================= */
 $title = "Register";
-$additionalcss1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/log-reg.css">';
+$additional_css_1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/log-reg.css">';
 
 /* =========================================================
    PAGE START
    ========================================================= */
-makeHead($title, $additionalcss1);
+makeHead($title, $additional_css_1);
 startBody();
 makeHeader();
 ?>
@@ -40,13 +40,13 @@ makeHeader();
             <form action="/TicTacToe-Hub/inc/inc_log-reg.php" method="POST">
 
                 <div class="input-group">
-                    <label for="firstname">First Name</label>
-                    <input type="text" id="firstname" name="firstname" required>
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" required>
                 </div>
 
                 <div class="input-group">
-                    <label for="lastname">Last Name</label>
-                    <input type="text" id="lastname" name="lastname" required>
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" required>
                 </div>
 
                 <div class="input-group">
