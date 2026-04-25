@@ -6,7 +6,6 @@ session_start();
 include("../inc/inc_modules.php");
 require_once "../data/db_connect.php";
 
-
 // Redirect if not logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -44,7 +43,7 @@ makeHeader2($_SESSION['profile_img']);
             <p><strong>Member Since:</strong> <?= htmlspecialchars($user['created_at']); ?></p>
         </div>
 
-        <a href="edit_profile.php" class="btn primary">Edit Profile</a>
+        <a href="./edit-profile.php" class="btn primary">Edit Profile</a>
 
     </div>
 

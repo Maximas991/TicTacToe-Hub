@@ -3,11 +3,11 @@
    ========================================================= */
 
 .profile-card {
+    max-width: 500px;
     background: #222;
     padding: 40px;
     border-radius: 20px;
     width: 100%;
-    max-width: 500px;
     text-align: center;
     color: white;
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);

@@ -7,11 +7,6 @@ Designed as a clean, interactive project for learning, practicing, and showcasin
 
 ## 🚀 Features
 
-### 🧩 Core Gameplay
-- Play classic Tic-Tac-Toe in the browser
-- Clean UI with smooth animations
-- Instant win/draw detection
-- Replay without refreshing the page
 
 ### 👤 User System
 - Login & logout
@@ -25,9 +20,15 @@ Designed as a clean, interactive project for learning, practicing, and showcasin
 
 ### 📱 Fully Responsive Header
 - Desktop navigation
-- Mobile hamburger menu (CSS checkbox toggle)
+- Mobile hamburger menu (CSS checkbox toggle instead of java)
 - Smooth slide-in mobile menu
 - Logo hover animation
+
+### 🧩 Core Gameplay (Coming Soon)
+- Play classic Tic-Tac-Toe in the browser
+- Clean UI with smooth animations
+- Instant win/draw detection
+- Replay without refreshing the page
 
 ---
 
@@ -38,6 +39,7 @@ TicTacToe-Hub/
 │
 ├── assets/
 │   ├── css/
+│   │   ├── avatar.css
 │   │   ├── footer.css
 │   │   ├── header.css
 │   │   ├── header2.css
@@ -60,6 +62,7 @@ TicTacToe-Hub/
 │   └── inc_temporary.php
 │
 ├── pages/
+│   ├── avatar.php
 │   ├── leaderboard.php
 │   ├── login.php
 │   ├── logout.php
@@ -79,6 +82,8 @@ TicTacToe-Hub/
 - **JavaScript** — game logic & interactivity
 - **XAMPP** — local development
 - **GitHub** — version control & portfolio hosting
+- **CoPilot** — help & solve (Save headache)
+- **Anthropic** — help & solve problem but different opinion from other AI (Save headache)
 
 ---
 
