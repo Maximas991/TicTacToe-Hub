@@ -5,6 +5,18 @@ require_once '../data/db_connect.php';
 /* =========================================================
    REGISTER USER
    ========================================================= */
+
+// List of available profile images
+$profileImages = [
+    '/TicTacToe-Hub/assets/img/profile/avatars/1)girl.png',
+    '/TicTacToe-Hub/assets/img/profile/avatars/2)knight_1.png',
+    '/TicTacToe-Hub/assets/img/profile/avatars/3)knight_2.png',
+    '/TicTacToe-Hub/assets/img/profile/avatars/4)boy.png',
+];
+
+// Pick a random one
+$randomProfileImg = $profileImages[array_rand($profileImages)];
+
 if (isset($_POST['register'])) {
 
     $first_name = $conn->real_escape_string($_POST['first_name']);
@@ -36,8 +48,8 @@ if (isset($_POST['register'])) {
     } else {
 
         $conn->query("
-            INSERT INTO users (first_name, last_name, username, email, password_hash)
-            VALUES ('$first_name', '$last_name', '$username', '$email', '$password')
+            INSERT INTO users (first_name, last_name, username, email, password_hash, profile_img)
+            VALUES ('$first_name', '$last_name', '$username', '$email', '$password', '$randomProfileImg')
         ");
 
         $_SESSION['register_success'] = 'Account created successfully!';
@@ -46,6 +58,8 @@ if (isset($_POST['register'])) {
     header("Location: /TicTacToe-Hub/pages/login.php");
     exit();
 }
+
+
 
 /* =========================================================
    LOGIN USER

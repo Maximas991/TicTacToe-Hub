@@ -103,7 +103,7 @@ function makeHeader2()
                 <img class="icon-close" src="/TicTacToe-Hub/assets/img/nav-icons/cross.svg" alt="Close">
             </label>
 
-            <!-- Off-screen Menu MUST come after hamburger -->
+            <!-- Off-screen Menu -->
             <div class="off-screen-menu">
                 <ul>
                     <li><a href="/TicTacToe-Hub/index.php">Home</a></li>
@@ -124,7 +124,7 @@ function makeHeader2()
                     <div class="nav-right-group">
                         <li>
                             <a href="/TicTacToe-Hub/pages/profile.php">
-                                <img class="profile-img" src="/TicTacToe-Hub/assets/img/profile/default.jpg"  alt="Profile" >
+                                <img class="profile-img" src="' . htmlspecialchars($_SESSION['profile_img']) . '" alt="Profile">
                             </a>
                         </li>
                         
@@ -136,9 +136,9 @@ function makeHeader2()
             </nav>
 
         </div>
-    </header>
-    ';
+    </header>';
 }
+
 
 function makeFooter()
 {

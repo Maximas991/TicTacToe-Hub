@@ -6,6 +6,7 @@ session_start();
 include("../inc/inc_modules.php");
 require_once "../data/db_connect.php";
 
+
 // Redirect if not logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -29,8 +30,18 @@ makeHeader2($_SESSION['profile_img']);
 
     <div class="profile-card">
 
+        <!-- =========================================================
+                 SUCCESS MESSAGE (after profile update)
+                 ========================================================= -->
+        <?php if (isset($_SESSION['success'])): ?>
+            <div class="success-msg">
+                <?= htmlspecialchars($_SESSION['success']); ?>
+            </div>
+            <?php unset($_SESSION['success']); ?>
+        <?php endif; ?>
+
         <div class="profile-img-wrapper">
-            <img src="<?= htmlspecialchars($user['profile_img']); ?>" class="profile-img-large" alt="Profile Picture">
+            <img src="<?= htmlspecialchars($_SESSION['profile_img']); ?>" class="profile-img-large" alt="Profile Picture">
         </div>
 
         <h1><?= htmlspecialchars($user['first_name']) . " " . htmlspecialchars($user['last_name']); ?></h1>
