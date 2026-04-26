@@ -118,7 +118,7 @@ http://localhost/TicTacToe-Hub/
 ---
 
 ## 📸 Screenshots
-
+👉 [View all screenshots](SCREENSHOTS.md)
 ```markdown
 ![Homepage](assets/img/screenshots/home.png)
 ![Gameplay](assets/img/screenshots/game.png)
