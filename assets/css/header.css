@@ -204,12 +204,12 @@
 
 .off-screen-menu ul li a:hover {
     color: #00c3ff;
-}
-
     width: 100%;
-
     transition: color .2s ease, transform .2s ease;
 }
+
+    
+
 
 .off-screen-menu ul li a:hover {
     color: #00c3ff;
