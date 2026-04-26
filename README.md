@@ -39,43 +39,50 @@ TicTacToe-Hub/
 │
 ├── assets/
 │   ├── css/
-│   │   ├── avatar.css
+│   │   ├── auth.css
 │   │   ├── edit-profile.css
 │   │   ├── footer.css
 │   │   ├── header.css
-│   │   ├── header2.css
 │   │   ├── leaderboard.css
-│   │   ├── log-reg.css
 │   │   ├── main.css
 │   │   ├── play.css
-│   │   ├── profile.css
-│   │   └── style.css
+│   │   ├── style.css
+│   │   ├── view-profile.css
+│   │   └── welcome.css
 │   ├── fonts/
-│   ├── img/    
+│   ├── img/
+│   │   ├── icons/
+│   │   ├── profile/
+│   │   └── screenshots/   
 │   └── js/
 │
 ├── data/
 │   ├── db_connect.php
 │   ├── queries.php
 │   └── TicTacToe-Hub.sql
+|
+├── handlers/
+│   ├── auth_handler.php
+│   ├── edit-profile_handler.php
+│   └── logout_handler.sql
 │
 ├── inc/
 │   ├── inc_config.php
-│   ├── inc_edit-profile-handler.php
-│   ├── inc_log-reg.php
-│   └── inc_modules.php
+│   ├── inc_modules.php
+│   └── inc_scripts.php
 │
 ├── pages/
-│   ├── avatar.php
+|   ├── game/ 
 │   ├── edit-profile.php
 │   ├── leaderboard.php
 │   ├── login.php
-│   ├── logout.php
 │   ├── play.php
-│   ├── profile.php
-│   └── register.php
+│   ├── register.php
+│   └── view-profile.php
 │
-└── index.php
+├── index.php
+├── README.md
+└── SCREENSHOTS.md
 ```
 
 ---
