@@ -1,4 +1,0 @@
-<?php
-    $tempName = "Mike";
-    $tempPhoto = ""
-?>

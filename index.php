@@ -1,28 +1,36 @@
 <?php
-/* =========================================================
-   SESSION + MODULES
-   ========================================================= */
+/************************************************************
+ *  DECLARATION, CONFIGURATION & MODULES
+ ************************************************************/
 session_start();
 include("./inc/inc_modules.php");
 
-
+// checks if user is logged in to set personalized title
 if (isset($_SESSION['user_id'])) {
-    $title = "Welcome back, " . htmlspecialchars($_SESSION['username'])."!";
+    $title = "Welcome back, " . htmlspecialchars($_SESSION['username']) . "!";
 } else {
     $title = "Welcome to TicTacToe-Hub";
 }
+/*-------------------------------------------------------------------------------*/
 
-makeHead($title, "");
-startBody();
 
+/************************************************************
+ *  OUTPUT (HEAD, HEADER, MAIN & FOOTER)
+ ************************************************************/
+makeHead($title, ""); // No custom CSS for now, but can be added later
+
+startBody(); // Start the body tag
+
+// checks if user is logged in to display appropriate header
 if (isset($_SESSION['user_id'])) {
-    makeHeader2($_SESSION['profile_img']);
+    makeHeader2($_SESSION['profile_img']);   // Header with profile image, logout button
 } else {
-    makeHeader();
+    makeHeader();                            // Default header
 }
 ?>
 
 <main>
+    <!-- Personalized welcome message and action buttons based on login status -->
     <?php if (isset($_SESSION['user_id'])): ?>
 
         <section class="welcome">
@@ -50,13 +58,12 @@ if (isset($_SESSION['user_id'])) {
         </section>
 
     <?php endif; ?>
+
 </main>
 
-<?php startScript();
-    
-?>
 
-<?php closeScript();?>
+<?php startScript();?>
+<?php closeScript(); ?>
 
 
 <?php

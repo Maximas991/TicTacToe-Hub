@@ -40,6 +40,7 @@ TicTacToe-Hub/
 ├── assets/
 │   ├── css/
 │   │   ├── avatar.css
+│   │   ├── edit-profile.css
 │   │   ├── footer.css
 │   │   ├── header.css
 │   │   ├── header2.css
@@ -50,22 +51,27 @@ TicTacToe-Hub/
 │   │   ├── profile.css
 │   │   └── style.css
 │   ├── fonts/
-│   ├── img/
+│   ├── img/    
 │   └── js/
 │
 ├── data/
+│   ├── db_connect.php
+│   ├── queries.php
+│   └── TicTacToe-Hub.sql
 │
 ├── inc/
 │   ├── inc_config.php
+│   ├── inc_edit-profile-handler.php
 │   ├── inc_log-reg.php
-│   ├── inc_modules.php
-│   └── inc_temporary.php
+│   └── inc_modules.php
 │
 ├── pages/
 │   ├── avatar.php
+│   ├── edit-profile.php
 │   ├── leaderboard.php
 │   ├── login.php
 │   ├── logout.php
+│   ├── play.php
 │   ├── profile.php
 │   └── register.php
 │
