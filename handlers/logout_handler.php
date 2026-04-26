@@ -5,3 +5,4 @@ session_destroy(); // destroy the session
 
 header("Location: /TicTacToe-Hub/index.php");
 exit();
+?>

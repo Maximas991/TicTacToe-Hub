@@ -44,7 +44,7 @@ makeHeader2($_SESSION['profile_img']);
             <!-- =========================================================
                  EDIT PROFILE FORM
                  ========================================================= -->
-            <form action="../inc/inc_edit-profile-handler.php" method="POST" class="edit-profile-form">
+            <form action="/TicTacToe-Hub/handlers/edit-profile_handler.php" method="POST" class="edit-profile-form">
 
                 <div class="profile-img-wrapper">
                     <img src="<?= htmlspecialchars($_SESSION['profile_img']); ?>" class="profile-img-large" alt="Profile Picture">

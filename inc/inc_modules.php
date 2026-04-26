@@ -50,8 +50,8 @@ function makeHeader()
 
             <!-- HAMBURGER BUTTON -->
             <label for="menu-toggle" class="hamburger">
-                <img class="icon-ham" src="/TicTacToe-Hub/assets/img/nav-icons/hamburger.svg" alt="Menu">
-                <img class="icon-close" src="/TicTacToe-Hub/assets/img/nav-icons/cross.svg" alt="Close">
+                <img class="icon-ham" src="/TicTacToe-Hub/assets/img/icons/nav_ico/hamburger.svg" alt="Menu">
+                <img class="icon-close" src="/TicTacToe-Hub/assets/img/icons/nav_ico/cross.svg" alt="Close">
             </label>
 
             <!-- MOBILE MENU -->
@@ -99,8 +99,8 @@ function makeHeader2()
 
             <!-- HAMBURGER BUTTON -->
             <label for="menu-toggle" class="hamburger">
-                <img class="icon-ham" src="/TicTacToe-Hub/assets/img/nav-icons/hamburger.svg" alt="Menu">
-                <img class="icon-close" src="/TicTacToe-Hub/assets/img/nav-icons/cross.svg" alt="Close">
+                <img class="icon-ham" src="/TicTacToe-Hub/assets/img/icons/nav_ico/hamburger.svg" alt="Menu">
+                <img class="icon-close" src="/TicTacToe-Hub/assets/img/icons/nav_ico/cross.svg" alt="Close">
             </label>
 
             <!-- Off-screen Menu -->
@@ -109,8 +109,8 @@ function makeHeader2()
                     <li><a href="/TicTacToe-Hub/index.php">Home</a></li>
                     <li><a href="/TicTacToe-Hub/pages/play.php">Play</a></li>
                     <li><a href="/TicTacToe-Hub/pages/leaderboard.php">Leaderboard</a></li>
-                    <li><a href="/TicTacToe-Hub/pages/profile.php">Profile</a></li>
-                    <li><a href="/TicTacToe-Hub/pages/logout.php">Logout</a></li>
+                    <li><a href="/TicTacToe-Hub/pages/view-profile.php">Profile</a></li>
+                    <li><a href="/TicTacToe-Hub/handlers/logout_handler.php">Logout</a></li>
                 </ul>
             </div>
             
@@ -123,13 +123,13 @@ function makeHeader2()
 
                     <div class="nav-right-group">
                         <li>
-                            <a href="/TicTacToe-Hub/pages/profile.php">
+                            <a href="/TicTacToe-Hub/pages/view-profile.php">
                                 <img class="profile-img" src="' . htmlspecialchars($_SESSION['profile_img']) . '" alt="Profile">
                             </a>
                         </li>
                         
                         <li id="logout-btn">
-                            <a href="/TicTacToe-Hub/pages/logout.php">Logout</a>
+                            <a href="/TicTacToe-Hub/handlers/logout_handler.php">Logout</a>
                         </li>
                     </div>
                 </ul>
@@ -155,9 +155,10 @@ function makeFooter()
                     </div>
 
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Vitae dolores ipsam reprehenderit nesciunt asperiores harum
-                        distinctio iusto quod doloremque voluptas.
+                        TicTacToe-Hub is your ultimate destination for all things TicTacToe. 
+                        Whether you\'re a casual player or a competitive strategist, 
+                        we\'ve got you covered with exciting games, leaderboards, 
+                        and a vibrant community. Join us and let\'s play!
                     </p>
 
                     <div class="footer_socials">
@@ -210,43 +211,6 @@ function makeFooter()
 
         </section>
     </footer>
-    ';
-}
-
-function startScript()
-{
-    echo '<script>';
-}
-
-function closeScript()
-{
-    echo '</script>';
-}
-
-function makeHeaderHamburgerMenuScript(){
-    echo '
-    document.addEventListener("DOMContentLoaded", () => {
-        const hamburger = document.getElementById("hamburger");
-        const mobileMenu = document.getElementById("mobileMenu");
-        const hamIcon = document.querySelector(".ham-icon");
-        const closeIcon = document.querySelector(".close-icon");
-
-        let menuOpen = false;
-
-        hamburger.addEventListener("click", () => {
-            menuOpen = !menuOpen;
-
-            if (menuOpen) {
-                mobileMenu.style.right = "0";
-                hamIcon.style.opacity = "0";
-                closeIcon.style.opacity = "1";
-            } else {
-                mobileMenu.style.right = "-350px";
-                hamIcon.style.opacity = "1";
-                closeIcon.style.opacity = "0";
-            }
-        });
-    });
     ';
 }
 

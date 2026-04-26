@@ -9,7 +9,7 @@ include("../inc/inc_modules.php"); // Loads your header, footer, etc.
    PAGE SETTINGS
    ========================================================= */
 $title = "Register";
-$additional_css_1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/log-reg.css">';
+$additional_css_1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/auth.css">';
 
 /* =========================================================
    PAGE START
@@ -37,7 +37,7 @@ makeHeader();
             <!-- =========================================================
                  REGISTER FORM
                  ========================================================= -->
-            <form action="/TicTacToe-Hub/inc/inc_log-reg.php" method="POST">
+            <form action="/TicTacToe-Hub/handlers/auth_handler.php" method="POST">
 
                 <div class="input-group">
                     <label for="first_name">First Name</label>

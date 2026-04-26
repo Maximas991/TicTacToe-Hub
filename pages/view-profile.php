@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $title = "Your Profile";
-$additional_css_1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/profile.css">';
+$additional_css_1 = '<link rel="stylesheet" href="/TicTacToe-Hub/assets/css/view-profile.css">';
 
 // Fetch user data from database
 $user_id = $_SESSION['user_id'];

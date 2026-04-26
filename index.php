@@ -4,6 +4,9 @@
  ************************************************************/
 session_start();
 include("./inc/inc_modules.php");
+include("./inc/inc_scripts.php");
+
+$additional_css_1 = '<link rel="stylesheet" href="assets/css/welcome.css">';
 
 // checks if user is logged in to set personalized title
 if (isset($_SESSION['user_id'])) {
@@ -17,7 +20,7 @@ if (isset($_SESSION['user_id'])) {
 /************************************************************
  *  OUTPUT (HEAD, HEADER, MAIN & FOOTER)
  ************************************************************/
-makeHead($title, ""); // No custom CSS for now, but can be added later
+makeHead($title, $additional_css_1); // Include the welcome CSS
 
 startBody(); // Start the body tag
 
@@ -38,9 +41,15 @@ if (isset($_SESSION['user_id'])) {
             <p>Ready for another round of TicTacToe?</p>
 
             <div class="welcome-buttons">
-                <a href="pages/game/tictactoe.php" class="btn primary">Continue Playing</a>
-                <a href="pages/profile.php" class="btn secondary">Your Profile</a>
-                <a href="pages/leaderboard.php" class="btn secondary">Leaderboard</a>
+                <div class="btn primary"><a href="pages/game/tictactoe.php">Continue Playing</a>
+            </div>
+
+            <div class="btn secondary">
+                    <a href="pages/view-profile.php" >Your Profile</a>
+            </div>
+
+            <div class="btn secondary">
+                <a href="pages/leaderboard.php" >Leaderboard</a></div>
             </div>
         </section>
 
@@ -52,8 +61,8 @@ if (isset($_SESSION['user_id'])) {
             <p>Love playing with toes?</p>
 
             <div class="welcome-buttons">
-                <a href="pages/game/tictactoe.php" class="btn primary">Play Now</a>
-                <a href="pages/register.php" class="btn secondary">Register</a>
+                <div><a href="pages/game/tictactoe.php" class="btn primary">Play Now</a></div>
+                <div><a href="pages/register.php" class="btn secondary">Register</a></div>
             </div>
         </section>
 
