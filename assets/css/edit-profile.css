@@ -11,7 +11,7 @@
     width: 100%;
     max-width: 500px;
 
-    background: #222;
+    background: #0f1319;
     padding: 40px;
     border-radius: 20px;
 
@@ -179,7 +179,7 @@
    MODAL CARD
    ============================ */
 .modal-content {
-    background: #222;
+    background: #0f1319;
     padding: 20px;
     border-radius: 15px;
     width: 90%;
@@ -194,11 +194,34 @@
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
+.modal-content h2 {
+    margin-bottom: 18px;
+}
+
 /* Scrollable area inside modal */
 .modal-scroll-area {
     overflow-y: auto;
     padding-right: 5px;
     margin-bottom: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.55) transparent;
+}
+
+.modal-scroll-area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.55);
+    border-radius: 999px;
+}
+
+.modal-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.75);
 }
 
 /* ============================
@@ -221,11 +244,11 @@
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .selectable-img:hover {
-    transform: scale(1.05);
+    transform: scale(0.98);
     border: 2px solid #00c3ff;
 }
 

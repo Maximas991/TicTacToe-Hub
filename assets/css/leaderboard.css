@@ -1,104 +1,120 @@
 /* Leaderboard Table Styling */
 .leaderboard {
-  width: 95%;
+  width: 85%;
+  max-width: 1200px;
   border-collapse: collapse;
-  background: #212121;
-  color: #fff;
+  background: #0f1319;
+  color: #e5e9f0;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
 
 /* Smooth animation for all rows */
 .leaderboard tbody tr {
-  transition: transform 0.15s ease, background 0.15s ease;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #1a1f2e;
 }
 
 /* Pop-out effect on hover */
 .leaderboard tbody tr:hover {
-  transform: scale(0.98);
-  background: white;
+  transform: translateX(8px);
+  background: rgba(0, 195, 255, 0.08);
   z-index: 5;
   position: relative;
+  box-shadow: 0 4px 12px rgba(0, 195, 255, 0.15);
 }
 
 
 
 /* Header */
 .leaderboard thead {
-  background: #222;
+  background: #0d0f16;
+  border-bottom: 2px solid #00c3ff;
 }
 
 .leaderboard th {
-  padding: 15px;
-  font-size: 18px;
+  padding: 18px 15px;
+  font-size: 16px;
   text-align: left;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  color: #00c3ff;
+  text-transform: uppercase;
 }
 
 /* Table Rows */
 .leaderboard td {
-  padding: 12px 15px;
-  font-size: 16px;
-  border-bottom: 1px solid #333;
+  padding: 16px 15px;
+  font-size: 15px;
+  color: #e5e9f0;
 }
 
-/* Highlight top 3 ranks */
+/* Highlight top 3 ranks - Gold */
 .leaderboard tbody tr:nth-child(1) {
-  background: linear-gradient(to right,
-      rgba(255, 217, 0, 0.473),
-      #333);
-  font-weight: bold;
-  color: white;
+  background: linear-gradient(to right, rgba(255, 215, 0, 0.15), rgba(0, 0, 0, 0));
+  border-left: 4px solid #ffd700;
+  font-weight: 600;
+}
+
+.leaderboard tbody tr:nth-child(1) td:first-child {
+  color: #ffd700;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .leaderboard tbody tr:nth-child(1):hover {
-  background: linear-gradient(to right,
-      rgba(255, 217, 0, 0.473),
-      #333)
+  background: linear-gradient(to right, rgba(255, 215, 0, 0.25), rgba(0, 0, 0, 0));
 }
 
 
+/* Highlight top 3 ranks - Silver */
 .leaderboard tbody tr:nth-child(2) {
-  background: linear-gradient(to right,
-      rgba(192, 192, 192, 0.438),
-      #333);
-  font-weight: bold;
-  color: white;
+  background: linear-gradient(to right, rgba(192, 192, 192, 0.12), rgba(0, 0, 0, 0));
+  border-left: 4px solid #c0c0c0;
+  font-weight: 600;
+}
+
+.leaderboard tbody tr:nth-child(2) td:first-child {
+  color: #c0c0c0;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .leaderboard tbody tr:nth-child(2):hover {
-  background: linear-gradient(to right,
-      rgba(192, 192, 192, 0.438),
-      #333)
+  background: linear-gradient(to right, rgba(192, 192, 192, 0.22), rgba(0, 0, 0, 0));
 }
 
+/* Highlight top 3 ranks - Bronze */
 .leaderboard tbody tr:nth-child(3) {
-  background: linear-gradient(to right,
-      #cd803260,
-      #333);
-  font-weight: bold;
-  color: white;
+  background: linear-gradient(to right, rgba(205, 127, 50, 0.12), rgba(0, 0, 0, 0));
+  border-left: 4px solid #cd7f32;
+  font-weight: 600;
+}
+
+.leaderboard tbody tr:nth-child(3) td:first-child {
+  color: #cd7f32;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .leaderboard tbody tr:nth-child(3):hover {
-  background: linear-gradient(to right,
-      #cd803260,
-      #333);
+  background: linear-gradient(to right, rgba(205, 127, 50, 0.22), rgba(0, 0, 0, 0));
 }
 
-/* Hover effect */
-.leaderboard tbody tr:hover {
-  background: #f0171700;
-  cursor: pointer;
-}
-
-/* Last row special highlight (your NoobMaster Justin) */
+/* Last row special highlight (current player) */
 .leaderboard tbody tr:nth-last-child(1) {
-  background: rgba(255, 0, 0, 0.15);
+  background: linear-gradient(to right, rgba(0, 195, 255, 0.12), rgba(0, 0, 0, 0));
+  border-left: 4px solid #00c3ff;
+  font-weight: 600;
+}
+
+.leaderboard tbody tr:nth-last-child(1) td:first-child {
+  color: #00c3ff;
+  font-weight: 700;
 }
 
 .leaderboard tbody tr:nth-last-child(1):hover {
-  background: rgba(255, 0, 0, 0.25);
+  background: linear-gradient(to right, rgba(0, 195, 255, 0.22), rgba(0, 0, 0, 0));
 }
