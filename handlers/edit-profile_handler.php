@@ -54,7 +54,7 @@ if ($stmt->execute()) {
 
 
     $_SESSION['success'] = "Profile updated successfully.";
-    header("Location: /TicTacToe-Hub/pages/profile.php");
+    header("Location: /TicTacToe-Hub/pages/view-profile.php");
     exit();
 
 } else {
